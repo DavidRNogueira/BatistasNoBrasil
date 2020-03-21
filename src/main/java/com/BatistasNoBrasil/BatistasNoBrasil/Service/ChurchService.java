@@ -5,6 +5,10 @@ import com.BatistasNoBrasil.BatistasNoBrasil.Dto.ChurchDto;
 import com.BatistasNoBrasil.BatistasNoBrasil.Entity.ChurchEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 public class ChurchService {
 
@@ -14,23 +18,33 @@ public class ChurchService {
         this.churchDao = churchDao;
     }
 
-    public ChurchDto getChurchesByState (String state){
-        ChurchEntity churchEntity = churchDao.getChurchByState(state);
+    public List<ChurchDto> getChurchesByState (String state){
+       List<ChurchEntity> churches = churchDao.getChurches();
 
-        ChurchDto church = new ChurchDto(
-                churchEntity.getName(),
-                churchEntity.getAddress(),
-                churchEntity.getCity(),
-                churchEntity.getState(),
-                churchEntity.getZip(),
-                churchEntity.getPastor(),
-                churchEntity.getDescription(),
-                churchEntity.getEmail(),
-                churchEntity.getPhone(),
-                churchEntity.getImage(),
-                churchEntity.getId(),
-                churchEntity.getWebsite()
-                );
-        return church;
+       List<ChurchEntity> churchesByState = churches.stream()
+               .filter(church -> church.getState() == state)
+               .collect(Collectors.toList());
+
+       List<ChurchDto> dtoList = null;
+
+        for (int i = 0; i < churchesByState.size(); i++) {
+           ChurchEntity currentChurch = churchesByState.get(i);
+           ChurchDto dto = new ChurchDto(
+                   currentChurch.getName(),
+                   currentChurch.getAddress(),
+                   currentChurch.getCity(),
+                   currentChurch.getState(),
+                   currentChurch.getZip(),
+                   currentChurch.getPastor(),
+                   currentChurch.getDescription(),
+                   currentChurch.getEmail(),
+                   currentChurch.getPhone(),
+                   currentChurch.getImage(),
+                   currentChurch.getId(),
+                   currentChurch.getWebsite()
+           );
+           dtoList.add(dto);
+        }
+        return dtoList;
     }
 }

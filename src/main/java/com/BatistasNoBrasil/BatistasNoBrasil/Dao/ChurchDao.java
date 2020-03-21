@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
+import java.util.List;
 
 @Repository
 public class ChurchDao {
@@ -29,9 +30,9 @@ public class ChurchDao {
     }
 
     @Transactional
-    public ChurchEntity getChurchByState (String state) {
+    public List<ChurchEntity> getChurches () {
         Session session = entityManager.unwrap(Session.class);
-        return session.get(ChurchEntity.class, state);
+        return session.createQuery("SELECT a FROM Church a", ChurchEntity.class).getResultList();
     }
 
 }

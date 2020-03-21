@@ -4,16 +4,17 @@ import axios from "axios"
 
 const ChurchList = () => {
 
-    const [igrejas , setIgrejas] = useState([{name:"Church" , city:"City" , state:"State" , image:"https://image.shutterstock.com/image-photo/family-relaxing-on-sofa-260nw-278188052.jpg"}])
+    const [igrejas , setIgrejas] = useState([null])
 
     useEffect(()=>{
         const fetchData = async () => {
-            const response = await axios.get ("/igrejas")
+            const response = await axios.get (`/igrejas?state=Roraima`)
             if (response.status === 200){
                 setIgrejas(response.data);
             }
         }
             fetchData();
+            console.log(igrejas)
     } , [])
 
     return (
@@ -26,13 +27,13 @@ const ChurchList = () => {
                 igrejas.map( church => {
                     return(
                     <ChurchDiv>
-                        <ChurchImg src={church.image} alt="https://powerplants.com.au/wp-content/uploads/2017/04/no-profile-pic.jpg"/>
+                        <ChurchImg src="https://powerplants.com.au/wp-content/uploads/2017/04/no-profile-pic.jpg" alt="https://powerplants.com.au/wp-content/uploads/2017/04/no-profile-pic.jpg"/>
                         <ChurchTextDiv>
                             <ChurchName>
-                                {church.name}
+                                Name
                             </ChurchName>
                             <ChurchCity>
-                                {church.city} , {church.state}
+                                City, State
                             </ChurchCity>
                         </ChurchTextDiv>
                     </ChurchDiv>

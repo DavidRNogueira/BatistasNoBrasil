@@ -72,7 +72,7 @@ public class ChurchEntity {
     @Column(name="id")
     private String id;
 
-    @Column(name="name")
+    @Column(name="website")
     private String website;
 
     public String getName() {
