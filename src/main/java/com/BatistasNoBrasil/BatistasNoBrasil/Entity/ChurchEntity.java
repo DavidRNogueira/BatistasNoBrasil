@@ -1,7 +1,5 @@
 package com.BatistasNoBrasil.BatistasNoBrasil.Entity;
 
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -11,6 +9,8 @@ import javax.persistence.Id;;
 @Entity
 @Table(name="church")
 public class ChurchEntity {
+
+    public ChurchEntity () {}
 
     public ChurchEntity (String name,
                       String address,

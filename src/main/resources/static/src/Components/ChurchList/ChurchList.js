@@ -8,38 +8,19 @@ const ChurchList = () => {
 
     useEffect(()=>{
         const fetchData = async () => {
-            const response = await axios.get (`/igrejas?state=Roraima`)
+            const response = await axios.get (`/igrejas?state=Alagoas`)
             if (response.status === 200){
+                console.log(400)
                 setIgrejas(response.data);
+                console.log(igrejas);
             }
         }
             fetchData();
-            console.log(igrejas)
     } , [])
 
     return (
         <ChurchListDiv>
-            {
-                igrejas === null && <NoChurches>No Churches</NoChurches>
-            }
-            {
-                igrejas && 
-                igrejas.map( church => {
-                    return(
-                    <ChurchDiv>
-                        <ChurchImg src="https://powerplants.com.au/wp-content/uploads/2017/04/no-profile-pic.jpg" alt="https://powerplants.com.au/wp-content/uploads/2017/04/no-profile-pic.jpg"/>
-                        <ChurchTextDiv>
-                            <ChurchName>
-                                Name
-                            </ChurchName>
-                            <ChurchCity>
-                                City, State
-                            </ChurchCity>
-                        </ChurchTextDiv>
-                    </ChurchDiv>
-                    )
-                })
-            }
+                            <button onClick={console.log(igrejas)}>Button</button>
         </ChurchListDiv>
     )
 }

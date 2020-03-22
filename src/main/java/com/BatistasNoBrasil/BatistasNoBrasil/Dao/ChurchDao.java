@@ -32,7 +32,7 @@ public class ChurchDao {
     @Transactional
     public List<ChurchEntity> getChurches () {
         Session session = entityManager.unwrap(Session.class);
-        return session.createQuery("SELECT a FROM Church a", ChurchEntity.class).getResultList();
+        return session.createQuery("SELECT a FROM ChurchEntity a", ChurchEntity.class).getResultList();
     }
 
 }

@@ -25,7 +25,7 @@ public class ChurchService {
                .filter(church -> church.getState() == state)
                .collect(Collectors.toList());
 
-       List<ChurchDto> dtoList = null;
+       List<ChurchDto> dtoList = new ArrayList<ChurchDto>();
 
         for (int i = 0; i < churchesByState.size(); i++) {
            ChurchEntity currentChurch = churchesByState.get(i);
@@ -45,6 +45,7 @@ public class ChurchService {
            );
            dtoList.add(dto);
         }
+
         return dtoList;
     }
 }
