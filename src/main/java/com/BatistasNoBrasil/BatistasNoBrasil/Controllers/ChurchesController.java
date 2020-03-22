@@ -18,12 +18,23 @@ public class ChurchesController {
     }
 
     @GetMapping("/igrejas")
-        public List<ChurchDto> getChurches(@RequestParam(name="state") String state) {
+        public List<ChurchDto> getChurchesByState(@RequestParam(name="state") String state) {
             System.out.println(state);
             List<ChurchDto> churches = churchService.getChurchesByState(state);
             return churches;
         }
 
+     @GetMapping("/all-churches")
+        public List<ChurchDto> getAllChurches () {
+        List<ChurchDto> allChurches = churchService.getAllChurches();
+        return allChurches;
+     }
+
+     @GetMapping("/church-by-id")
+        public ChurchDto getChurchById (@RequestParam(name="id") String id){
+        ChurchDto church = churchService.getChurchById(id);
+        return church;
+     }
 }
 
 
