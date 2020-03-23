@@ -30,6 +30,9 @@ margin-bottom:0.3em
 
 export const Info = styled.strong `
 font-size:1em;
+width:90%;
+margin:auto;
+text-align:center;
 `
 
 export const ChurchAvatar = styled.img `
