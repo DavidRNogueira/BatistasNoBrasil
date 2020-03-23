@@ -14,11 +14,12 @@ CREATE TABLE `church` (
   `phone` varchar(200) DEFAULT NULL,
   `image` varchar(200) DEFAULT NULL,
   `id` varchar(200) UNIQUE,
+  `website` varchar(200) DEFAULT NULL,
+    PRIMARY KEY (`id`)
+)
+ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-INSERT INTO church(name, address, city,state,zip,pastor,description,email,phone,image,id)
+INSERT INTO church(name, address, city,state,zip,pastor,description,email,phone,image,id,website)
 VALUES(
 	'Primeira Igreja Batista Regular de Rio Branco',
     'Rua Marechal Deodoro 284, Centro, Caixa Postal 197',
@@ -30,11 +31,11 @@ VALUES(
     'emidio@contilnet.com.br',
     '3228-1917 , 3228-1925',
     '',
-    '000002',
-    ''
+    '000001',
+    '' 
 ) ,
 (
-	'IGREJA BATISTA INDEPENDENTE MACEDÔNIA',
+	'Igreja Batista Independente Macedõnia',
     'Rua J, 837 - Bairro: Ilson Ribeiro',
     'Rio Branco',
     'Acre',
@@ -579,14 +580,6 @@ VALUES(
     '000040',
     'www.tbm.org.br '
 ) ,
-
-
-
-// Second Half
-
-
-
-
 (
 		'Igreja Batista Missionária Bom Pastor',
         'Rua Humberto Macedo, 157 – Bairro: Rosa de Jesus',
