@@ -11,12 +11,13 @@ margin-top:2em;
 
 export const ChurchDiv = styled(Link) `
 display:flex;
-flex-direction:row;
-justify-content:space-between;
-align-self:center;
+
 background-color:lightblue;
 width:100%;
-margin:1em;
+flex-direction:column;
+align-items:center;
+justify-self:center;
+margin:1em auto 1em auto;
 border-radius:10px;
 padding:1em 0 1em 0;
 text-decoration:none;
@@ -28,7 +29,11 @@ color:black;
 }
 
 @media(min-width:550px){
-    width:90%
+	width:90%
+	flex-direction:row;
+	justify-content:space-between;
+	align-self:center;
+
 }
 
 @media(min-width:900px){
@@ -40,11 +45,15 @@ export const ChurchTextDiv = styled.div `
 display:flex;
 flex-direction:column;
 justify-content:center;
-margin-right:1em;
+
+@media(min-width:550px){
+	margin-right:1em;
+}
+
 `
 
 export const ChurchImg = styled.img `
-width:5em;
+width:8em;
 margin:1em;
 
 @media(min-width:700px){
@@ -59,11 +68,14 @@ margin:1em;
 export const ChurchName = styled.h1 `
 font-size:1.25em;
 margin:0;
-text-align:right;
+text-align:center;
+@media(min-width:550px){
+	text-align:right;
+}
 `
 
 export const ChurchCity = styled.i `
-text-align:right;
+text-align:center;
 
 `
 

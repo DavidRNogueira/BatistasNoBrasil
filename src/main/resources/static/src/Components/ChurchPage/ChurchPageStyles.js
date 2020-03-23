@@ -29,6 +29,7 @@ align-items:center;
 export const ChurchName = styled.h1 `
 font-weight: bold;
 font-size:1.5em;
+text-align:center;
 
 
 @media(min-width:500px){
