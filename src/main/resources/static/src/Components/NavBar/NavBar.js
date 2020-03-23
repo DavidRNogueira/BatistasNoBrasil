@@ -6,7 +6,7 @@ const NavBar = () => {
         <LogoDiv>
         <Logo>Batistas No Brasil</Logo>
         <LogoDes>
-            Diretorio de Igrejas Batistas Fundamentalistas no Brasil
+            Diretório de Igrejas Batistas Fundamentalistas no Brasil
         </LogoDes>
         </LogoDiv>
     )

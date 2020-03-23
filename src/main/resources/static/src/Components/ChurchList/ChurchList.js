@@ -5,7 +5,7 @@ import NoAvatar from "../../Images/NoAvatar.png"
 
 const ChurchList = () => {
 
-    const [igrejas , setIgrejas] = useState([])
+    const [igrejas , setIgrejas] = useState([{id:"000001" , name: "A Church" , city: "city" , state: "state"}])
 
     useEffect(()=>{
         const fetchData = async () => {

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom"
 export const ChurchListDiv = styled.div `
 display:flex;
 flex-direction:column;
-width:80%;
+width:90%;
 margin:auto;
 margin-top:2em;
 `
@@ -15,7 +15,7 @@ flex-direction:row;
 justify-content:space-between;
 align-self:center;
 background-color:lightblue;
-width:80%;
+width:100%;
 margin:1em;
 border-radius:10px;
 padding:1em 0 1em 0;
@@ -25,6 +25,14 @@ color:black;
 :hover {
     background-color:white;
     color:black;
+}
+
+@media(min-width:550px){
+    width:90%
+}
+
+@media(min-width:900px){
+    width:60%
 }
 `
 
@@ -36,8 +44,16 @@ margin-right:1em;
 `
 
 export const ChurchImg = styled.img `
-width:10em;
+width:5em;
 margin:1em;
+
+@media(min-width:700px){
+    width:10em;
+}
+
+@media(min-width:550px){
+    width:7em;
+}
 `
 
 export const ChurchName = styled.h1 `
@@ -63,7 +79,7 @@ display: block;
 	color: #444;
 	line-height: 1.3;
 	padding: .6em 1.4em .5em .8em;
-	width: 50%;
+	width: 80%;
 	max-width: 100%;
 	box-sizing: border-box;
 	margin: auto;
@@ -95,5 +111,9 @@ display: block;
 }
  option {
 	font-weight:normal;
+}
+
+@media(min-width:550px){
+    width:50%
 }
 `
